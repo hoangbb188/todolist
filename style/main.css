@@ -688,7 +688,11 @@ input[type="submit"] {
   .resp-menu {
     padding: 10px 15px;
   }
-  .resp-menu_btn {
+.resp-menu_btn {
+    background-color: transparent;
+    border: none;
+    color: whitesmoke;
+    font-size: 30px;
     height: 28px;
     width: 28px;
   }
