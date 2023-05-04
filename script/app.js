@@ -3895,10 +3895,10 @@ function detectClickOutsideForm(e) {
 
 function initStorage() {
   // Try to get data
-  projectsHandler.items = JSON.parse(localStorage.getItem("projects"));
-  tasksHandler.items = JSON.parse(localStorage.getItem("tasks"));
+  projectsHandler.items = JSON.parse(sessionStorage.getItem("projects"));
+  tasksHandler.items = JSON.parse(sessionStorage.getItem("tasks"));
 
-  // If there was no data in localStorage assign some test data
+  // If there was no data in sessionStorage, assign some test data
   if (projectsHandler.items === null || tasksHandler.items === null) {
     const testProjectsData = [
       {
@@ -3910,12 +3910,10 @@ function initStorage() {
         title: "Demo Project",
       },
     ];
-
-    localStorage.setItem("projects", JSON.stringify(testProjectsData));
-    localStorage.setItem("tasks", JSON.stringify(testTasksData));
-
     projectsHandler.items = testProjectsData;
     tasksHandler.items = testTasksData;
+    sessionStorage.setItem("projects", JSON.stringify(testProjectsData));
+    sessionStorage.setItem("tasks", JSON.stringify(testTasksData));
   }
 
   projectsHandler.init();
@@ -3924,12 +3922,11 @@ function initStorage() {
 }
 
 function updateProjectsStorage() {
-  localStorage.setItem("projects", JSON.stringify(projectsHandler.items));
+  sessionStorage.setItem("projects", JSON.stringify(projectsHandler.items));
 }
 
 function updateTasksStorage() {
-  localStorage.setItem("tasks", JSON.stringify(tasksHandler.items));
-} // CONCATENATED MODULE: ./src/app.js
+  sessionStorage.setItem("tasks", JSON.stringify(tasksHandler.items));
+}
 
 initStorage();
-/******/
