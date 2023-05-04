@@ -416,10 +416,15 @@ input[type="checkbox"]:checked {
   font-weight: 600;
   padding: 10px 50px;
 }
-.resp-menu_btn {
-  height: 32px;
-  width: 32px;
-}
+  .resp-menu_btn {
+    background-color: transparent;
+    border: none;
+    color: whitesmoke;
+    font-size: 30px;
+    height: 40px;
+    width: 40px;
+  }
+
 button {
   appearance: none;
   background: none;
