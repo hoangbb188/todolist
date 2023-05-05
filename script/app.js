@@ -1,4 +1,3 @@
-// CONCATENATED MODULE: ./src/modules/tasks.js
 const tasksHandler = {
   items: [],
   addTask: function (task) {
@@ -2359,19 +2358,8 @@ var locale = {
     firstWeekContainsDate: 1,
   },
 };
-/* harmony default export */ const en_US = locale; // CONCATENATED MODULE: ./node_modules/date-fns/esm/_lib/defaultLocale/index.js
-/* harmony default export */ const defaultLocale = en_US; // CONCATENATED MODULE: ./node_modules/date-fns/esm/format/index.js
-// This RegExp consists of three parts separated by `|`:
-// - [yYQqMLwIdDecihHKkms]o matches any available ordinal number token
-//   (one of the certain letters followed by `o`)
-// - (\w)\1* matches any sequences of the same letter
-// - '' matches two quote characters in a row
-// - '(''|[^'])+('|$) matches anything surrounded by two quote characters ('),
-//   except a single quote symbol, which ends the sequence.
-//   Two quote characters do not end the sequence.
-//   If there is no matching single quote
-//   then the sequence will continue until the end of the string.
-// - . matches any single character unmatched by previous parts of the RegExps
+/* harmony default export */ const en_US = locale;
+/* harmony default export */ const defaultLocale = en_US;
 
 var formattingTokensRegExp =
   /[yYQqMLwIdDecihHKkms]o|(\w)\1*|''|'(''|[^'])+('|$)|./g; // This RegExp catches symbols escaped by quotes, and also
@@ -3058,23 +3046,7 @@ function isThisWeek(dirtyDate, options) {
  * @returns {Number} the result of the comparison
  * @throws {TypeError} 2 arguments required
  *
- * @example
- * // Compare 11 February 1987 and 10 July 1989:
- * const result = compareAsc(new Date(1987, 1, 11), new Date(1989, 6, 10))
- * //=> -1
- *
- * @example
- * // Sort the array of dates:
- * const result = [
- *   new Date(1995, 6, 2),
- *   new Date(1987, 1, 11),
- *   new Date(1989, 6, 10)
- * ].sort(compareAsc)
- * //=> [
- * //   Wed Feb 11 1987 00:00:00,
- * //   Mon Jul 10 1989 00:00:00,
- * //   Sun Jul 02 1995 00:00:00
- * // ]
+
  */
 
 function compareAsc(dirtyDateLeft, dirtyDateRight) {
@@ -3090,39 +3062,7 @@ function compareAsc(dirtyDateLeft, dirtyDateRight) {
   } else {
     return diff;
   }
-} // CONCATENATED MODULE: ./node_modules/date-fns/esm/compareDesc/index.js
-/**
- * @name compareDesc
- * @category Common Helpers
- * @summary Compare the two dates reverse chronologically and return -1, 0 or 1.
- *
- * @description
- * Compare the two dates and return -1 if the first date is after the second,
- * 1 if the first date is before the second or 0 if dates are equal.
- *
- * @param {Date|Number} dateLeft - the first date to compare
- * @param {Date|Number} dateRight - the second date to compare
- * @returns {Number} the result of the comparison
- * @throws {TypeError} 2 arguments required
- *
- * @example
- * // Compare 11 February 1987 and 10 July 1989 reverse chronologically:
- * const result = compareDesc(new Date(1987, 1, 11), new Date(1989, 6, 10))
- * //=> 1
- *
- * @example
- * // Sort the array of dates in reverse chronological order:
- * const result = [
- *   new Date(1995, 6, 2),
- *   new Date(1987, 1, 11),
- *   new Date(1989, 6, 10)
- * ].sort(compareDesc)
- * //=> [
- * //   Sun Jul 02 1995 00:00:00,
- * //   Mon Jul 10 1989 00:00:00,
- * //   Wed Feb 11 1987 00:00:00
- * // ]
- */
+}
 
 function compareDesc(dirtyDateLeft, dirtyDateRight) {
   requiredArgs(2, arguments);
@@ -3137,7 +3077,7 @@ function compareDesc(dirtyDateLeft, dirtyDateRight) {
   } else {
     return diff;
   }
-} // CONCATENATED MODULE: ./src/modules/ui/ui-menu.js
+}
 // Dom cache
 const menuBtn = document.getElementsByClassName("resp-menu_btn")[0];
 const sidebar = document.getElementsByClassName("sidebar")[0];
@@ -3166,7 +3106,7 @@ observer.observe(document.body);
 function closeMenu() {
   sidebar.classList.toggle("active");
   darkOverlay.classList.toggle("menu-active");
-} // CONCATENATED MODULE: ./src/images/walking-outside.png
+}
 
 let uncompletedTaskCount;
 const currTaskInfo = {
@@ -3678,7 +3618,7 @@ function resetForm() {
 }
 
 newTaskForm.reset();
-editTaskForm.reset(); // CONCATENATED MODULE: ./src/modules/ui/ui-projects.js
+editTaskForm.reset();
 
 let activeTab = 0; // Stores which project is currently selected by the user
 let sidebarProjectTitle; // Stores the node of the selected project
@@ -3888,7 +3828,7 @@ function detectClickOutsideForm(e) {
     return;
 
   hideNewProjectForm();
-} // CONCATENATED MODULE: ./src/modules/storage.js
+}
 function initStorage() {
   // Try to get data
   projectsHandler.items = JSON.parse(localStorage.getItem("projects"));
@@ -3896,83 +3836,75 @@ function initStorage() {
 
   // If there was no data in localStorage assign some test data
   if (projectsHandler.items === null || tasksHandler.items === null) {
-      const testProjectsData = [
-          {
-              id: 0,
-              title: "Home",
-          },
-          {
-              id: 1,
-              title: "Demo Project",
-          }
-      ]
-      const testTasksData = [
-          task("You can edit this task and delete it!",
-              "",
-              new Date("2022-09-17 00:00"),
-              "none",
-              0,
-          ),
-          task("Set priorities for each one of your tasks",
-              `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu tortor mi. Proin in sapien vehicula, 
+    const testProjectsData = [
+      {
+        id: 0,
+        title: "Home",
+      },
+      {
+        id: 1,
+        title: "Exercise Projects",
+      },
+    ];
+    const testTasksData = [
+      task(
+        "You can edit this task and delete it!",
+        "",
+        new Date("2023-04-17 00:00"),
+        "none",
+        0
+      ),
+      task(
+        "Set priorities for each one of your tasks",
+        `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu tortor mi. Proin in sapien vehicula, 
               feugiat nunc sit amet, cursus velit. Integer ut nisi semper, fringilla elit ac, rutrum turpis. Vestibulum 
               lacinia efficitur arcu, vitae pharetra urna sagittis nec. Praesent sodales ornare tortor, at lacinia augue 
               condimentum et. Duis ut rutrum odio. Maecenas ac tincidunt magna, at finibus est. Donec eu massa id risus 
-              gravida feugiat. Curabitur tincidunt turpis ut nunc facilisis sagittis.
-              Etiam ultrices ultrices erat, vitae porttitor risus posuere quis. Pellentesque a metus posuere, fringilla
-              eros ac, sagittis neque. Vivamus pretium semper arcu. Sed nisi velit, consectetur viverra feugiat vel,
-              dapibus et lacus. Praesent eget tempus dolor. Duis lacinia tristique augue, eu pharetra sapien mattis id.
-              Suspendisse faucibus lectus eros, eget dapibus purus lacinia sit amet. Pellentesque eleifend pulvinar imperdiet.`,
-              new Date("2022-09-13 00:00"),
-              "high",
-              0
-          ),
-          task("Push the project to Github",
-              "Don't forget that you have to do it before this week ends!",
-              new Date("2022-09-13 00:00"),
-              "medium",
-              0
-          ),
-          task("Do some exercise",
-              null,
-              null,
-              "low",
-              0,
-              true
-          ),
-          task("Take meds",
-              "Example med",
-              new Date("2022-09-12 00:00"),
-              "none",
-              0
-          ),
-          task(
-              "You can create your own projects to organize the tasks",
-              "Try it by clicking on the button to your bottom left corner '+ New Project'",
-              new Date("2023-09-20 00:00"),
-              "low",
-              1,
-          ),
-          task("Demo task 2",
-              `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu tortor mi. Proin in sapien vehicula, 
+              gravida feugiat. Curabitur tincidunt turpis ut nunc facilisis sagittis.`,
+        new Date("2022-09-13 00:00"),
+        "high",
+        0
+      ),
+      task(
+        "Push the project to Github",
+        "Don't forget that you have to do it before this week ends!",
+        new Date("2023-05-5 00:00"),
+        "medium",
+        0
+      ),
+      task("Do some exercise", null, null, "low", 0, true),
+      task(
+        "Washing clothes",
+        "Example med",
+        new Date("2023-07-12 00:00"),
+        "none",
+        0
+      ),
+      task(
+        "You can create your own projects to organize the tasks",
+        "Try it by clicking on the button to your bottom left corner '+ New Project'",
+        new Date("2023-04-20 00:00"),
+        "low",
+        1
+      ),
+      task(
+        "Demo task 2",
+        `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu tortor mi. Proin in sapien vehicula, 
               feugiat nunc sit amet, cursus velit. Integer ut nisi semper, fringilla elit ac, rutrum turpis. Vestibulum 
               lacinia efficitur arcu, vitae pharetra urna sagittis nec. Praesent sodales ornare tortor, at lacinia augue 
               condimentum et. Duis ut rutrum odio. Maecenas ac tincidunt magna, at finibus est. Donec eu massa id risus 
-              gravida feugiat. Curabitur tincidunt turpis ut nunc facilisis sagittis.
-              Etiam ultrices ultrices erat, vitae porttitor risus posuere quis. Pellentesque a metus posuere, fringilla
-              eros ac, sagittis neque. Vivamus pretium semper arcu. Sed nisi velit, consectetur viverra feugiat vel,
-              dapibus et lacus. Praesent eget tempus dolor. Duis lacinia tristique augue, eu pharetra sapien mattis id.`,
-              new Date("2022-09-04 00:00"),
-              "none",
-              1
-          ),
-      ];
+              gravida feugiat. Curabitur tincidunt turpis ut nunc facilisis sagittis.`,
+        new Date("2023-05-08 00:00"),
+        "low",
+        1
+      ),
+    ];
 
-      localStorage.setItem("projects", JSON.stringify(testProjectsData));
-      localStorage.setItem("tasks", JSON.stringify(testTasksData));
+    localStorage.setItem("projects", JSON.stringify(testProjectsData));
+    localStorage.setItem("tasks", JSON.stringify(testTasksData));
 
-      projectsHandler.items = testProjectsData;
-      tasksHandler.items = testTasksData;
+    projectsHandler.items = testProjectsData;
+    tasksHandler.items = testTasksData;
   }
 
   projectsHandler.init();
@@ -3988,9 +3920,4 @@ function updateTasksStorage() {
   localStorage.setItem("tasks", JSON.stringify(tasksHandler.items));
 }
 
-
-
-;// CONCATENATED MODULE: ./src/app.js
-
 initStorage();
-
