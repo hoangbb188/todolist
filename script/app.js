@@ -3861,13 +3861,13 @@ function initStorage() {
               lacinia efficitur arcu, vitae pharetra urna sagittis nec. Praesent sodales ornare tortor, at lacinia augue 
               condimentum et. Duis ut rutrum odio. Maecenas ac tincidunt magna, at finibus est. Donec eu massa id risus 
               gravida feugiat. Curabitur tincidunt turpis ut nunc facilisis sagittis.`,
-        new Date("2022-09-13 00:00"),
+        new Date("2023-10-13 00:00"),
         "high",
         0
       ),
       task(
-        "Push the project to Github",
-        "Don't forget that you have to do it before this week ends!",
+        "Push ",
+        "Don't forget that ",
         new Date("2023-05-5 00:00"),
         "medium",
         0
@@ -3875,7 +3875,7 @@ function initStorage() {
       task("Do some exercise", null, null, "low", 0, true),
       task(
         "Washing clothes",
-        "Example med",
+        "Example",
         new Date("2023-07-12 00:00"),
         "none",
         0
@@ -3888,7 +3888,7 @@ function initStorage() {
         1
       ),
       task(
-        "Demo task 2",
+        "Demo task ",
         `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu tortor mi. Proin in sapien vehicula, 
               feugiat nunc sit amet, cursus velit. Integer ut nisi semper, fringilla elit ac, rutrum turpis. Vestibulum 
               lacinia efficitur arcu, vitae pharetra urna sagittis nec. Praesent sodales ornare tortor, at lacinia augue 
