@@ -1,6 +1,6 @@
 # todolist
 todo-list app
- - Check out live preview here: 
+ - Check out live preview here: https://todolist-tan-ten.vercel.app/
 # Functionality
  - Create, edit and delete tasks.
  - Users can label tasks by priority (represented with colors).
